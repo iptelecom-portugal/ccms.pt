@@ -16,8 +16,6 @@ We run a PKI provider base on the current C-ITS security standards: +
 
 At the moment the our PKI services are based on Root Certifications Authorities (RCA) registered at the EC's https://cpoc.jrc.ec.europa.eu/ECTL.html[ECTL Level 0] trust domain, intended mainly for testing and pilot use cases. +
 
-YOu wiil nee
-
 
 ## Access and Registration
 
