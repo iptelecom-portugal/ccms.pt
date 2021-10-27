@@ -6,14 +6,14 @@ C-ITS Credential Management System from IP Telecom - Portugal.
 
 ## Introduction
 
-The European Commission (EC) runs a C-ITS Point of Contact (CPOC). It provides Trust List Manager (TLM) an European Certificate Trust Lists (ECTL). Further details are here https://cpoc.jrc.ec.europa.eu/ +
+The European Commission (EC) runs a C-ITS Point of Contact (CPOC). It provides a Trust List Manager (TLM) and a European Certificate Trust Lists (ECTL). Further details are here https://cpoc.jrc.ec.europa.eu/ +
 
 We run a PKI provider base on current C-ITS security standards: +
 
-* https://www.etsi.org/deliver/etsi_ts/103000_103099/103097/01.03.01_60/ts_103097v010301p.pdf[ETSI TS 103 097 V1.3.1] Defines the security headers used in the message exchange between two stations
-* https://www.etsi.org/deliver/etsi_ts/102900_102999/102941/01.03.01_60/ts_102941v010301p.pdf[ETSI TS 102 941 V1.3.1] Defines the interaction between the PKI system and the C-ITS Stations, between Enrollment Authories and Authorization Authorities within the PKI system, and between the PKI system and the European C-ITS Point of Contact.
+* https://www.etsi.org/deliver/etsi_ts/103000_103099/103097/01.03.01_60/ts_103097v010301p.pdf[ETSI TS 103 097 V1.3.1] - Intelligent Transport Systems (ITS) ; Security ; Security  header and certificate formats - Defines the security header used in the message exchange between two C-ITS stations (C-ITS-S).
+* https://www.etsi.org/deliver/etsi_ts/102900_102999/102941/01.03.01_60/ts_102941v010301p.pdf[ETSI TS 102 941 V1.3.1] - Intelligent Transport Systems (ITS) ; Security ; Trust and Privacy Management - Defines the interaction between the PKI system and the C-ITS Stations, between Enrollment Authories (EA) and Authorization Authorities (EA) within the PKI system, and between the PKI system and the CPOC.
 
-At the moment the our PKI services are based on Root Certifications Authorities (RCA) registered at the European Union's https://cpoc.jrc.ec.europa.eu/ECTL.html[ECTL Level 0] trust domain, used mainly for testing and pilot programs. +
+At the moment the our PKI services are based on Root Certifications Authorities (RCA) registered at the EC's https://cpoc.jrc.ec.europa.eu/ECTL.html[ECTL Level 0] trust domain, intended mainly for testing and pilot use cases. +
 
 ## Technicalities
 
