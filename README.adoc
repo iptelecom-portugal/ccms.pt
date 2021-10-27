@@ -1,6 +1,6 @@
 # CCMS.PT
 
-C-ITS Credential Management System from IP Telecom - Portugal.
+*C-ITS Credential Management System* by *IP Telecom* - Portugal.
 
 (this is work in progress...)
 
