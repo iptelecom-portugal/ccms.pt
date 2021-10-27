@@ -1,3 +1,39 @@
-# ccms.pt
+# CCMS.PT
 
-IP Telecom - Portugal - C-ITS Credential Management System (Alfa)
+C-ITS Credential Management System from IP Telecom - Portugal.
+
+(this is work in progress...)
+
+## Introduction
+
+The European Commission (EC) runs a C-ITS Point of Contact (CPOC). It provides Trust List Manager (TLM) an European Certificate Trust Lists (ECTL). Further details are here https://cpoc.jrc.ec.europa.eu/ +
+
+We run a PKI provider base on current C-ITS security standards: +
+
+* https://www.etsi.org/deliver/etsi_ts/103000_103099/103097/01.03.01_60/ts_103097v010301p.pdf[ETSI TS 103 097 V1.3.1] Defines the security headers used in the message exchange between two stations
+* https://www.etsi.org/deliver/etsi_ts/102900_102999/102941/01.03.01_60/ts_102941v010301p.pdf[ETSI TS 102 941 V1.3.1] Defines the interaction between the PKI system and the C-ITS Stations, between Enrollment Authories and Authorization Authorities within the PKI system, and between the PKI system and the European C-ITS Point of Contact.
+
+At the moment the our PKI services are based on Root Certifications Authorities (RCA) registered at the European Union's https://cpoc.jrc.ec.europa.eu/ECTL.html[ECTL Level 0] trust domain, used mainly for testing and pilot programs. +
+
+## Technicalities
+
+### Supported Hardware
+
+This repository contains procedures and tools to enable the provisioning of the supported C-ITS Station hardware models so that they may use our PKI system as the security certificate provider.
+
+The supported systems are:
+
+* COHDA MK5 release 17.0 (any moment now...)
+* A-To-Be <?model?> <?version?> (comming soon)
+* CTag <?model?> <?version?> (comming soon)
+* Siemens <?model?> <?version?> (comming soon)
+
+### Usage
+<? Describe provisioning procedures ?>
+
+- COHDA MK5 release 17.0
+- A-To-Be <?model?> <?version?>
+- CTag <?model?> <?version?>
+- Siemens <?model?> <?version?>
+
+
