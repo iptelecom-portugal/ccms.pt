@@ -4,18 +4,42 @@ C-ITS Credential Management System from IP Telecom - Portugal.
 
 (this is work in progress...)
 
+
 ## Introduction
 
 The European Commission (EC) runs a C-ITS Point of Contact (CPOC). It provides a Trust List Manager (TLM) and a European Certificate Trust Lists (ECTL). Further details are here https://cpoc.jrc.ec.europa.eu/ +
 
-We run a PKI provider base on current C-ITS security standards: +
+We run a PKI provider base on the current C-ITS security standards: +
 
 * https://www.etsi.org/deliver/etsi_ts/103000_103099/103097/01.03.01_60/ts_103097v010301p.pdf[ETSI TS 103 097 V1.3.1] - Intelligent Transport Systems (ITS) ; Security ; Security  header and certificate formats - Defines the security header used in the message exchange between two C-ITS stations (C-ITS-S).
 * https://www.etsi.org/deliver/etsi_ts/102900_102999/102941/01.03.01_60/ts_102941v010301p.pdf[ETSI TS 102 941 V1.3.1] - Intelligent Transport Systems (ITS) ; Security ; Trust and Privacy Management - Defines the interaction between the PKI system and the C-ITS Stations, between Enrollment Authories (EA) and Authorization Authorities (EA) within the PKI system, and between the PKI system and the CPOC.
 
 At the moment the our PKI services are based on Root Certifications Authorities (RCA) registered at the EC's https://cpoc.jrc.ec.europa.eu/ECTL.html[ECTL Level 0] trust domain, intended mainly for testing and pilot use cases. +
 
+YOu wiil nee
+
+
+## Access and Registration
+
+The artifacts (RCA, CTL, CRL, EA, AA, etc) published by our PKI system are publicly accessible at:
+
+<?list artifact endpoints?>
+
+The service endpoints are:
+
+<?list service endpoints?>
+
+In order to use our PKI services and provision your equipment for security using our system, you (and/or your company) will need to do initial registration with our service desk. +
+At the momment access to this PKI system is limited to https://www.c-roads.eu/platform.html[C-ROADS Platform] participants/partners that provide correct and verifiable registration information.
+
+<?provide registration instructions?>
+
+This will provide you with the administrative and/or API credentials that are required to allow you to initialize your equipment's security keys in our platform. +
+After that you should follow the specific instructions in this repository to initialize your equipment's security configuration, and it should be able to automatically manage the lifecycle of it's own EC and AT certificates, as per the ETSI standards. 
+
+
 ## Technicalities
+
 
 ### Supported Hardware
 
@@ -28,12 +52,13 @@ The supported systems are:
 * CTag <?model?> <?version?> (comming soon)
 * Siemens <?model?> <?version?> (comming soon)
 
+
 ### Usage
 <? Describe provisioning procedures ?>
 
-- COHDA MK5 release 17.0
-- A-To-Be <?model?> <?version?>
-- CTag <?model?> <?version?>
-- Siemens <?model?> <?version?>
+- COHDA MK5 release 17.0 (any moment now...)
+- A-To-Be <?model?> <?version?> (comming soon)
+- CTag <?model?> <?version?> (comming soon)
+- Siemens <?model?> <?version?> (comming soon)
 
 
