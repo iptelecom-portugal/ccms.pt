@@ -1,8 +1,7 @@
 #!/bin/sh
 
 # EU CPOC Base URL :    https://cpoc.jrc.ec.europa.eu/L0
-# CCMS.PT BAse URL:     https://0.dc.pilot.croads.ccms.pt/L0
-
+# CCMS.PT Base URL:     https://0.dc.pilot.croads.ccms.pt
 
 mkdir -p /mnt/rw/ccms.pt
 
@@ -22,7 +21,6 @@ certadm add-ctl -ourCtl /mnt/rw/ccms.pt/ctl
 crladm import --etsiCrl /mnt/rw/ccms.pt/crl
 
 
-
 # “rsu.conf”:
 #- disable security check in the .conf file
 #  Cohda_Crypto_InitSelfTest = 0
@@ -31,13 +29,11 @@ crladm import --etsiCrl /mnt/rw/ccms.pt/crl
 #- configure the TLS certificate
 #  SCMS_SSLCAFile = /etc/ssl/certs/DST_Root_CA_X3.pem
 
-
 #“rsu.cfg”:
 #For IVIM (In Vehicle Information Message) the permissions for the ServiceProviderCountryID and ServiceProviderIssuerId need to be adapted.
 #- ServiceProviderCountryID default 0x31C is for Australia
 #- ServiceProviderIssuerId default is 1
 #For details of the ServiceProviderCountryID and ServiceProviderIssuerId encoding see Appendix 4.1
-
 
 
 # "aerolink/active/security-context/its.wsc":

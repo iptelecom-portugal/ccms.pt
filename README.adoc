@@ -9,31 +9,63 @@
 
 The European Commission (EC) runs a C-ITS Point of Contact (CPOC). It provides a Trust List Manager (TLM) and a European Certificate Trust Lists (ECTL). Further details are here https://cpoc.jrc.ec.europa.eu/ +
 
+Current EC CPOC artifacts can be found at:
+
+* TLM:  https://cpoc.jrc.ec.europa.eu/L0/gettlmcertificate
+* LINK:  https://cpoc.jrc.ec.europa.eu/L0/gettlmlinkcertificate
+* ECTL:  https://cpoc.jrc.ec.europa.eu/L0/getectl/1D261F9E338ECB5B
+
 We run a PKI provider base on the current C-ITS security standards: +
 
-* https://www.etsi.org/deliver/etsi_ts/103000_103099/103097/01.03.01_60/ts_103097v010301p.pdf[ETSI TS 103 097 V1.3.1] - Intelligent Transport Systems (ITS) ; Security ; Security  header and certificate formats - Defines the security header used in the message exchange between two C-ITS stations (C-ITS-S).
-* https://www.etsi.org/deliver/etsi_ts/102900_102999/102941/01.03.01_60/ts_102941v010301p.pdf[ETSI TS 102 941 V1.3.1] - Intelligent Transport Systems (ITS) ; Security ; Trust and Privacy Management - Defines the interaction between the PKI system and the C-ITS Stations, between Enrollment Authories (EA) and Authorization Authorities (EA) within the PKI system, and between the PKI system and the CPOC.
+* https://www.etsi.org/deliver/etsi_ts/103000_103099/103097/01.03.01_60/ts_103097v010301p.pdf[ETSI TS 103 097 V1.3.1] - Intelligent Transport Systems (ITS) ; Security ; Security  header and certificate formats.
+* https://www.etsi.org/deliver/etsi_ts/102900_102999/102941/01.03.01_60/ts_102941v010301p.pdf[ETSI TS 102 941 V1.3.1] - Intelligent Transport Systems (ITS) ; Security ; Trust and Privacy Management.
 
-At the moment the our PKI services are based on Root Certifications Authorities (RCA) registered at the EC's https://cpoc.jrc.ec.europa.eu/ECTL.html[ECTL Level 0] trust domain, intended mainly for testing and pilot use cases. +
+At the moment the our PKI services are based on a Root Certification Authority (RCA) registered at the EC's https://cpoc.jrc.ec.europa.eu/ECTL.html[ECTL Level 0] trust domain, intended mainly for testing and pilot use cases. +
 
 
-## Access and Registration
+## Access
 
-The artifacts (RCA, CTL, CRL, EA, AA, etc) published by our PKI system are publicly accessible at:
+The main base URL for our current PKI services is: *https://0.dc.pilot.croads.ccms.pt/*
 
-<?list artifact endpoints?>
+For reference, and manual or scripted access, current artifacts published by our PKI are publicly accessible in binary OER format at:
 
-The service endpoints are:
+* Root CA registered at the ECTL (Level 0)
+** RCA:  https://0.dc.pilot.croads.ccms.pt/getcacerts/85987527EE188A49
+** RCA-CTL:  https://0.dc.pilot.croads.ccms.pt/getctl/85987527EE188A49
+** RCA-CRL:  https://0.dc.pilot.croads.ccms.pt/getcrl/85987527EE188A49
 
-<?list service endpoints?>
+* Pair of CAs geographically restricted to Portugal, typically for provisioning R-ITS-S/RSU, and used for that purpose throughout the C-ROADS Portugal pilot projects: +
+** EA-PT:  https://0.dc.pilot.croads.ccms.pt/getcacerts/BA12069B91B8E810
+** AA-PT:  https://0.dc.pilot.croads.ccms.pt/getcacerts/9047B112864EDDFD
+
+* Pair of CAs with no geographic restrictions, typically for provisioning V-ITS-S/OBU, and used for that purpose throughout the C-ROADS Portugal pilot projects: +
+** EA-WW:  https://0.dc.pilot.croads.ccms.pt/getcacerts/CAC1A29FA18FAF14
+** AA-WW:  https://0.dc.pilot.croads.ccms.pt/getcacerts/369F636239546522
+
+* Generic pair of CAs with no restrictions, that can be used for testing or other general purposes: +
+** EA-TS:  https://0.dc.pilot.croads.ccms.pt/getcacerts/4C87B1B09B8CD364
+** AA-TS:  https://0.dc.pilot.croads.ccms.pt/getcacerts/0646294BB7BE3D8F
+
+The service endpoints for provisioning of ECs and ATs are:
+
+* EA:  https://0.ea.pilot.croads.ccms.pt/ec
+* AA:  https://0.aa.pilot.croads.ccms.pt/at
+
+As per the ETSI Standards, all of these endpoints are discoverable from the ECTL and RCA CTL.
+
+
+## Registration
 
 In order to use our PKI services and provision your equipment for security using our system, you (and/or your company) will need to do initial registration with our service desk. +
-At the momment access to this PKI system is limited to https://www.c-roads.eu/platform.html[C-ROADS Platform] participants/partners that provide correct and verifiable registration information.
+At the momment, access to this PKI system is limited to https://www.c-roads.eu/platform.html[C-ROADS Platform] participants/partners that provide correct and verifiable registration information.
 
-<?provide registration instructions?>
+For now, if you wish to apply, please send an e-mail to <TODO: email address> containing the following information:
 
-This will provide you with the administrative and/or API credentials that are required to allow you to initialize your equipment's security keys in our platform. +
-After that you should follow the specific instructions in this repository to initialize your equipment's security configuration, and it should be able to automatically manage the lifecycle of it's own EC and AT certificates, as per the ETSI standards. 
+<TODO: describe needed info>
+
+This will provide you with the administrative and/or API credentials that are required to allow you to perform initial registration of your equipment in our platform. +
+
+After that you should follow the specific instructions in this repository to initialize your equipment's security configuration, and it should be ready to manage the lifecycle of it's EC and AT certificates, as per the ETSI standards. 
 
 
 ## Technicalities
@@ -43,7 +75,7 @@ After that you should follow the specific instructions in this repository to ini
 
 This repository contains procedures and tools to enable the provisioning of the supported C-ITS Station hardware models so that they may use our PKI system as the security certificate provider.
 
-The supported systems are:
+The currently supported hardware systems are:
 
 * COHDA MK5 release 17.0 (any moment now...)
 * A-To-Be <?model?> <?version?> (comming soon)
@@ -52,7 +84,8 @@ The supported systems are:
 
 
 ### Usage
-<? Describe provisioning procedures ?>
+
+Please follow the instruction pertaing 
 
 - COHDA MK5 release 17.0 (any moment now...)
 - A-To-Be <?model?> <?version?> (comming soon)
