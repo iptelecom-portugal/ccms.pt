@@ -76,9 +76,9 @@ After that you may follow the specific instructions in this repository to initia
 Currently these are the tested and supported hardware systems are:
 
 * COHDA MK5 release 17.0 (any moment now...)
-* A-To-Be <?model?> <?version?> (comming soon)
-* CTag <?model?> <?version?> (comming soon)
-* Siemens <?model?> <?version?> (comming soon)
+* A-To-Be (comming soon)
+* Siemens (comming soon)
+* CTag (comming soon)
 
 
 ### Usage
@@ -86,8 +86,8 @@ Currently these are the tested and supported hardware systems are:
 You can find here the specific procedures and tools to help in  provisioning these C-ITS Station hardware models so that they may use our PKI system as the security certificate provider for your equipment:
 
 - COHDA MK5 release 17.0 (any moment now...)
-- A-To-Be <?model?> <?version?> (comming soon)
-- CTag <?model?> <?version?> (comming soon)
-- Siemens <?model?> <?version?> (comming soon)
+- A-To-Be (comming soon)
+- Siemens (comming soon)
+- CTag (comming soon)
 
 
