@@ -65,7 +65,7 @@ For now, if you wish to apply, please send an e-mail to <TODO: email address> co
 
 This will provide you with the administrative and/or API credentials that are required to allow you to perform initial registration of your equipment in our platform. +
 
-After that you should follow the specific instructions in this repository to initialize your equipment's security configuration, and it should be ready to manage the lifecycle of it's EC and AT certificates, as per the ETSI standards. 
+After that you may follow the specific instructions in this repository to initialize your equipment's security configuration, and it should be ready to manage the lifecycle of it's EC and AT certificates, as per the ETSI standards. 
 
 
 ## Technicalities
@@ -73,9 +73,7 @@ After that you should follow the specific instructions in this repository to ini
 
 ### Supported Hardware
 
-This repository contains procedures and tools to enable the provisioning of the supported C-ITS Station hardware models so that they may use our PKI system as the security certificate provider.
-
-The currently supported hardware systems are:
+Currently these are the tested and supported hardware systems are:
 
 * COHDA MK5 release 17.0 (any moment now...)
 * A-To-Be <?model?> <?version?> (comming soon)
@@ -85,7 +83,7 @@ The currently supported hardware systems are:
 
 ### Usage
 
-Please follow the instruction pertaing 
+You can find here the specific procedures and tools to help in  provisioning these C-ITS Station hardware models so that they may use our PKI system as the security certificate provider for your equipment:
 
 - COHDA MK5 release 17.0 (any moment now...)
 - A-To-Be <?model?> <?version?> (comming soon)
