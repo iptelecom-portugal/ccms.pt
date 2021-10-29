@@ -29,7 +29,7 @@ The main base URL for our current PKI services is: *https://0.dc.pilot.croads.cc
 
 For reference, and manual or scripted access, current artifacts published by our PKI are publicly accessible in binary OER format at:
 
-* Root CA registered at the ECTL (Level 0)
+* Root CA registered at the ECTL Level 0
 ** RCA:  https://0.dc.pilot.croads.ccms.pt/getcacerts/85987527EE188A49
 ** RCA-CTL:  https://0.dc.pilot.croads.ccms.pt/getctl/85987527EE188A49
 ** RCA-CRL:  https://0.dc.pilot.croads.ccms.pt/getcrl/85987527EE188A49
