@@ -27,7 +27,7 @@ At the moment the our PKI services are based on a Root Certification Authority (
 
 The main base URL for our current PKI services is: *https://0.dc.pilot.croads.ccms.pt/*
 
-For reference, and manual or scripted access, current artifacts published by our PKI are publicly accessible in binary OER format at:
+For reference, and manual or scripted access, current artifacts published by our PKI are publicly accessible in native binary OER encoding at:
 
 * Root CA registered at the ECTL Level 0
 ** RCA:  https://0.dc.pilot.croads.ccms.pt/getcacerts/85987527EE188A49
