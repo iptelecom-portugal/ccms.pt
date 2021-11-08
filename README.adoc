@@ -7,9 +7,13 @@
 
 ## Introduction
 
-The European Commission (EC) runs a C-ITS Point of Contact (CPOC). It provides a Trust List Manager (TLM) and a European Certificate Trust Lists (ECTL). Further details are here https://cpoc.jrc.ec.europa.eu/ +
+The European Commission (EU) runs a C-ITS Point of Contact (CPOC). It provides a Trust List Manager (TLM) and a European Certificate Trust Lists (ECTL). Further details and related documnentation can de found at https://cpoc.jrc.ec.europa.eu/Documentation.html, including:
 
-Current EC CPOC artifacts can be found at:
+* https://cpoc.jrc.ec.europa.eu/data/documents/c-its_security_policy_release_preparatory_phase_of_Delegated_Regulation_2019_1789.pdf[C-ITS Security Policy (EU SP)]
+* https://cpoc.jrc.ec.europa.eu/data/documents/c-its_certificate_policy_release_preparatory_phase_of_Delegated_Regulation_2019_1789.pdf[C-ITS Certificate Policy (EU CP)]
+* https://cpoc.jrc.ec.europa.eu/data/documents/CPOC_Protocol_Release1.pdf[CPOC Protocol (EU CPOC)]
+
+Current EU CPOC artifacts are publicly available at:
 
 * TLM:  https://cpoc.jrc.ec.europa.eu/L0/gettlmcertificate
 * LINK:  https://cpoc.jrc.ec.europa.eu/L0/gettlmlinkcertificate
@@ -25,9 +29,9 @@ At the moment the our PKI services are based on a Root Certification Authority (
 
 ## Access
 
-The main base URL for our current PKI services is: *https://0.dc.pilot.croads.ccms.pt/*
+The main base URL for the Distribution Center (DC) of our current PKI services is: *https://0.dc.pilot.croads.ccms.pt/*
 
-For reference, and manual or scripted access, current artifacts published by our PKI are publicly accessible in native binary OER encoding at:
+For reference, and manual or scripted access, current artifacts published by our PKI are directly accessible in native encoding [ASN.1 COER] at:
 
 * Root CA registered at the ECTL Level 0
 ** RCA:  https://0.dc.pilot.croads.ccms.pt/getcacerts/85987527EE188A49
@@ -46,36 +50,50 @@ For reference, and manual or scripted access, current artifacts published by our
 ** EA-TS:  https://0.dc.pilot.croads.ccms.pt/getcacerts/4C87B1B09B8CD364
 ** AA-TS:  https://0.dc.pilot.croads.ccms.pt/getcacerts/0646294BB7BE3D8F
 
-The service endpoints for provisioning of ECs and ATs are:
+The two main service endpoints for security provisioning of stations are discoverable from the ECTL and RCA CTL, as per the ETSI standards:
 
 * EA:  https://0.ea.pilot.croads.ccms.pt/ec
 * AA:  https://0.aa.pilot.croads.ccms.pt/at
 
-As per the ETSI Standards, all of these endpoints are discoverable from the ECTL and RCA CTL.
+
+The full APIs (work-in-progress) are browsable from the root of each service instance:
+
+* RCA/DC:  https://0.ea.pilot.croads.ccms.pt/
+* EA:  https://0.aa.pilot.croads.ccms.pt/
+* AA:  https://0.aa.pilot.croads.ccms.pt/
 
 
-## Registration
+## Partner Registration
 
 In order to use our PKI services and provision your equipment for security using our system, you (and/or your company) will need to do initial registration with our service desk. +
 At the momment, access to this PKI system is limited to https://www.c-roads.eu/platform.html[C-ROADS Platform] participants/partners that provide correct and verifiable registration information.
 
-For now, if you wish to apply, please send an e-mail to <TODO: email address> containing the following information:
+If you wish to apply, please send an e-mail to *pki-croads@iptelecom.pt* containing the following information:
 
-<TODO: describe needed info>
+* Company Name
+* Contact Name
+* Contact Email
+* EAs you wich to use (see list above).
+* Number of stations you'll be needing to register, per EA.
 
-This will provide you with the administrative and/or API credentials that are required to allow you to perform initial registration of your equipment in our platform. +
+We will then provide you with the credentials that are required to allow you to use the APIs and perform registration of your ITS Stations in our platform. +
+After that you are ready to use the service APIs, and may follow more specific instructions in this repository to initialize your equipment's security configuration. 
 
-After that you may follow the specific instructions in this repository to initialize your equipment's security configuration, and it should be ready to manage the lifecycle of it's EC and AT certificates, as per the ETSI standards. 
+
+## Usage
+
+### Station Registration
+
+(comming very soon...)
 
 
-## Technicalities
-
+## Vendor Specific Information
 
 ### Supported Hardware
 
 Currently these are the tested and supported hardware systems are:
 
-* COHDA MK5 release 17.0 (any moment now...)
+* COHDA MK5 release 17.0 (comming very soon...)
 * A-To-Be (comming soon)
 * Siemens (comming soon)
 * CTag (comming soon)
