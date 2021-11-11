@@ -23,7 +23,7 @@ Our C-ITS Credential Management System is based on the current C-ITS security st
 * https://www.etsi.org/deliver/etsi_ts/103000_103099/103097/01.03.01_60/ts_103097v010301p.pdf[ETSI TS 103 097 V1.3.1] - Intelligent Transport Systems (ITS) ; Security ; Security  header and certificate formats.
 * https://www.etsi.org/deliver/etsi_ts/102900_102999/102941/01.03.01_60/ts_102941v010301p.pdf[ETSI TS 102 941 V1.3.1] - Intelligent Transport Systems (ITS) ; Security ; Trust and Privacy Management.
 
-At the moment the our PKI services run a Root Certification Authority (RCA) registered at the EC's https://cpoc.jrc.ec.europa.eu/ECTL.html[ECTL Level 0] trust domain. +
+At the moment our PKI services run a Root Certification Authority (RCA) registered at the EC's https://cpoc.jrc.ec.europa.eu/ECTL.html[ECTL Level 0] trust domain. +
 
 Note that these services are not fully compliant with the C-ITS Security and Certificate Policies requirements, and aim to comply only with the L0 environment guidelines as defined by the European Commission Expert Group on C-ITS Security (E01941), wich are strictly only intended for testing purposes of C-ITS Services.
 
