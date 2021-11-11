@@ -1,8 +1,5 @@
-# CCMS.PT
-
-*C-ITS Credential Management System* by *IP Telecom* in *Portugal*.
-
-(this is work in progress...)
+# *C-ITS Credential Management System* by https://www.iptelecom.pt[*IP Telecom*]
+(* This is work in progress in ALFA development stage...)
 
 
 ## Introduction
@@ -24,7 +21,9 @@ We run a PKI provider base on the current C-ITS security standards: +
 * https://www.etsi.org/deliver/etsi_ts/103000_103099/103097/01.03.01_60/ts_103097v010301p.pdf[ETSI TS 103 097 V1.3.1] - Intelligent Transport Systems (ITS) ; Security ; Security  header and certificate formats.
 * https://www.etsi.org/deliver/etsi_ts/102900_102999/102941/01.03.01_60/ts_102941v010301p.pdf[ETSI TS 102 941 V1.3.1] - Intelligent Transport Systems (ITS) ; Security ; Trust and Privacy Management.
 
-At the moment the our PKI services are based on a Root Certification Authority (RCA) registered at the EC's https://cpoc.jrc.ec.europa.eu/ECTL.html[ECTL Level 0] trust domain, intended mainly for testing and pilot use cases. +
+At the moment the our PKI services are based on a Root Certification Authority (RCA) registered at the EC's https://cpoc.jrc.ec.europa.eu/ECTL.html[ECTL Level 0] trust domain. +
+
+Note that these services are not fully compliant with the C-ITS Security and Certificate Policies requirements and aim to comply only with the L0 Environment guidelines as defined by the European Commission Expert Group on C-ITS Security (E01941), and are strictly only intended for testing purposes of C-ITS Services.
 
 
 ## Access
@@ -39,24 +38,27 @@ For reference, and manual or scripted access, current artifacts published by our
 ** RCA-CRL:  https://0.dc.pilot.croads.ccms.pt/getcrl/85987527EE188A49
 
 * Pair of CAs geographically restricted to Portugal, typically for provisioning R-ITS-S/RSU, and used for that purpose throughout the C-ROADS Portugal pilot projects: +
-** EA-PT:  https://0.dc.pilot.croads.ccms.pt/getcacerts/BA12069B91B8E810
-** AA-PT:  https://0.dc.pilot.croads.ccms.pt/getcacerts/9047B112864EDDFD
+** EA-PT:  https://0.ea.pilot.croads.ccms.pt/getcacerts/BA12069B91B8E810
+** AA-PT:  https://0.aa.pilot.croads.ccms.pt/getcacerts/9047B112864EDDFD
 
 * Pair of CAs with no geographic restrictions, typically for provisioning V-ITS-S/OBU, and used for that purpose throughout the C-ROADS Portugal pilot projects: +
-** EA-WW:  https://0.dc.pilot.croads.ccms.pt/getcacerts/CAC1A29FA18FAF14
-** AA-WW:  https://0.dc.pilot.croads.ccms.pt/getcacerts/369F636239546522
+** EA-WW:  https://0.ea.pilot.croads.ccms.pt/getcacerts/CAC1A29FA18FAF14
+** AA-WW:  https://0.aa.pilot.croads.ccms.pt/getcacerts/369F636239546522
 
 * Generic pair of CAs with no restrictions, that can be used for testing or other general purposes: +
-** EA-TS:  https://0.dc.pilot.croads.ccms.pt/getcacerts/4C87B1B09B8CD364
-** AA-TS:  https://0.dc.pilot.croads.ccms.pt/getcacerts/0646294BB7BE3D8F
+** EA-TS:  https://0.ea.pilot.croads.ccms.pt/getcacerts/4C87B1B09B8CD364
+** AA-TS:  https://0.aa.pilot.croads.ccms.pt/getcacerts/0646294BB7BE3D8F
 
-The two main service endpoints for security provisioning of stations are discoverable from the ECTL and RCA CTL, as per the ETSI standards:
+All artifacts and service endpoints are discoverable from the ECTL and RCA CTL, as per the ETSI standards. + 
 
-* EA:  https://0.ea.pilot.croads.ccms.pt/ec
-* AA:  https://0.aa.pilot.croads.ccms.pt/at
+The two main public endpoints for security provisioning of C-ITS stations are:
 
+* https://0.ea.pilot.croads.ccms.pt/ec
+* https://0.aa.pilot.croads.ccms.pt/at
 
-The full APIs (work-in-progress) are browsable from the root of each service instance:
+The ETSI repository at https://forge.etsi.org/gitlab/ITS/ITS_ASN1 houses related ASN.1 definitions .
+
+The available APIs specifications are accessible and browsable from the root of each service instance:
 
 * RCA/DC:  https://0.ea.pilot.croads.ccms.pt/
 * EA:  https://0.aa.pilot.croads.ccms.pt/
@@ -74,9 +76,9 @@ If you wish to apply, please send an e-mail to *pki-croads@iptelecom.pt* contain
 * Contact Name
 * Contact Email
 * EAs you wich to use (see list above).
-* Number of stations you'll be needing to register, per EA.
+* Maximum number of stations you'll be needing to register, per each EA.
 
-We will then provide you with the credentials that are required to allow you to use the APIs and perform registration of your ITS Stations in our platform. +
+We will then provide you with the account credentials that are required to allow you to use the APIs and perform registration of your ITS Stations in our platform. +
 After that you are ready to use the service APIs, and may follow more specific instructions in this repository to initialize your equipment's security configuration. 
 
 
@@ -84,28 +86,106 @@ After that you are ready to use the service APIs, and may follow more specific i
 
 ### Station Registration
 
-(comming very soon...)
+Standard C-ITS PKI endpoints are not authenticated by definition, but extended APIs always require OpenID Connect based authentication with the account(s) assigned to you. +
+You can manage your account at https://auth.undr.ngcs.pt/auth/realms/CCMS.PT/account.
+
+Example: Obtaining an access token and storing it in an environment variable.
+[source,bash]
+----
+export OIDC_ACCESS_TOKEN=$( scripts/oidc-client.sh \
+    --token-endpoint https://auth.undr.ngcs.pt/auth/realms/CCMS.PT/protocol/openid-connect/token \
+    --operation resource_owner_password_grant \
+    --client-id ea.pilot.croads.ccms.pt \
+    --scope openid \
+    --username <username> \
+    --password <password> \
+    --field '.access_token') \
+&& echo $OIDC_ACCESS_TOKEN
+----
+
+The EA API provides authenticated REST endpoints to manage station registration at https://0.ea.pilot.croads.ccms.pt/api/stations. +
+
+The PUT and POST methods accept a JSON structure describing the station(s) to be registered. +
+
+Example: JSON for an hypothetical RSU:
+[source,json]
+----
+{
+	"canonical_identifier": "IPTRSU0000000001",
+	"public_key": "1bb48707908923c9a6bd5cc9f9c0f46ad51f68223b489ba6f9c0972b85881818",
+    "profile": "roadSideUnit",
+	"custom_profile": {
+		"region": {
+			"identifiedRegion ": [ { "countryOnly": 620 } ]
+		},
+		"appPermissions": [
+			{ "psid": 36,  "ssp": { "bitmapSsp": "01809c"} },
+			{ "psid": 37,  "ssp": { "bitmapSsp": "01ffffff"} },
+			{ "psid": 139,  "ssp": { "bitmapSsp": "01684000fff8"} },            
+			{ "psid": 141 }
+		]
+	}
+}
+----
+
+The "canonical_identifier", "public_key", and at least one of the "profile" or "custom_profile" fields are mandatory. +
+
+It is recomended that the "canonical_identifier" use a vendor/operator specific prefix. +
+
+The "public_key" is a ASN.1 COER _PublicVerificationKey_ in hexdecimal encoding. +
+
+The "profile" field indicates one of the preset default station profiles as defined by C-ROADS Portugal, and are loosely related to station types. Accepted values are:
+
+* central
+* passengerCar
+* bus
+* tram
+* specialVehicle
+* roadSideUnit
+
+If you omit the "profile" field, then you must provide the "custom_profile" field and vice-versa. +
+
+The "custom_profile" field may fully or partialy define the profile items, so if you provide both fields, the custom definition overrides and/or adds to the preset profile.
+
+Note that in any case the registered profile should comply with the permissions assigned to the correspondent Authorization Auhtority (AA) in order for it to be able to then issue the Authorization Tickets (AT) upon request. +
+
+
+Example: Registering a RSU, using the obtained access token and the above JSON example:
+
+[source,bash]
+----
+<TBD>
+----
+
+
+You can obviously use any language or tool that supports OpenAPI 3.0 to access the APIs programaticaly.
+
+Alternativelly you can emails us this information to *pki-croads@iptelecom.pt* indicating:
+
+* Company Name
+* Contact Name
+* Contact Email
+* HashedId8 oft the EA to associate the station(s) with
+* JSON Structure for each station
 
 
 ## Vendor Specific Information
 
 ### Supported Hardware
 
-Currently these are the tested and supported hardware systems are:
+Some tested hardware systems and software versions are:
 
-* COHDA MK5 release 17.0 (comming very soon...)
-* A-To-Be (comming soon)
-* Siemens (comming soon)
-* CTag (comming soon)
+* COHDA MK5 release 17.0 (any moment now...)
+* <TBD> ( A-To-B, CTag, Siemens - comming soon...)
 
 
-### Usage
+### Vendor Specific Instructions
 
 You can find here the specific procedures and tools to help in  provisioning these C-ITS Station hardware models so that they may use our PKI system as the security certificate provider for your equipment:
 
-- COHDA MK5 release 17.0 (any moment now...)
-- A-To-Be (comming soon)
-- Siemens (comming soon)
-- CTag (comming soon)
+* COHDA MK5 release 17.0 (any moment now...)
+* A-To-Be (comming soon)
+* CTag (comming soon)
+* Siemens (comming soon)
 
 
