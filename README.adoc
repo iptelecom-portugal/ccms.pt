@@ -77,8 +77,8 @@ If you wish to apply, please send an e-mail to *pki-croads@iptelecom.pt* contain
 * Company Name
 * Contact Name
 * Contact Email
-* EAs you wich to use (see list above).
-* Maximum number of stations you'll be needing to register, per each EA.
+* HashedID8 of the EAs you wich to use (see list above).
+* Maximum number of stations you'll be needing to register, per EA.
 
 We will then provide you with the account credentials that are required to allow you to use the APIs and perform registration of your ITS Stations in our platform. +
 After that you are ready to use the service APIs, and may follow more specific instructions in this repository to initialize your equipment's security configuration. 
@@ -113,8 +113,8 @@ Example: JSON for an hypothetical RSU:
 [source,json]
 ----
 {
-	"canonical_identifier": "IPTRSU0000000001",
-	"public_key": "1bb48707908923c9a6bd5cc9f9c0f46ad51f68223b489ba6f9c0972b85881818",
+    "canonical_identifier": "IPTRSU0000000001",
+    "public_key": "1bb48707908923c9a6bd5cc9f9c0f46ad51f68223b489ba6f9c0972b85881818",
     "profile": "roadSideUnit",
 	"custom_profile": {
 		"region": {
@@ -149,7 +149,7 @@ If you omit the "profile" field, then you must provide the "custom_profile" fiel
 
 The "custom_profile" field may fully or partialy define the profile items, so if you provide both fields, the custom definition overrides and/or adds to the preset profile.
 
-Note that in any case the registered profile should comply with the permissions assigned to the correspondent Authorization Auhtority (AA) in order for it to be able to then issue the Authorization Tickets (AT) upon request. +
+Note that in any case the registered profile should comply with the certificate issuance permissions assigned to the correspondent Authorization Auhtority (AA) in order for it to be able to then validate and issue the Authorization Ticket (AT) requests. +
 
 
 Example: Registering a RSU, using the obtained access token and the above JSON example:
@@ -159,16 +159,15 @@ Example: Registering a RSU, using the obtained access token and the above JSON e
 <TBD>
 ----
 
+You can also use any language or tool that supports OpenAPI 3.0 to access the APIs programaticaly.
 
-You can obviously use any language or tool that supports OpenAPI 3.0 to access the APIs programaticaly.
-
-Alternativelly you can emails us this information to *pki-croads@iptelecom.pt* indicating:
+Alternativelly you can emails us the information to *pki-croads@iptelecom.pt* indicating:
 
 * Company Name
 * Contact Name
 * Contact Email
-* HashedId8 oft the EA to associate the station(s) with
-* JSON Structure for each station
+* HashedId8 of the EA to associate the station(s)
+* JSON structure for each station to register
 
 
 ## Vendor Specific Information
