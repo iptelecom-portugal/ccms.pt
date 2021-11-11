@@ -117,14 +117,14 @@ Example: JSON for an hypothetical RSU:
     "public_key": "1bb48707908923c9a6bd5cc9f9c0f46ad51f68223b489ba6f9c0972b85881818",
     "profile": "roadSideUnit",
     "custom_profile": {
-	    "region": {
-			"identifiedRegion ": [ { "countryOnly": 620 } ]
-		},
-		"appPermissions": [
-		    { "psid": 36,  "ssp": { "bitmapSsp": "01809c"} },
-		    { "psid": 37,  "ssp": { "bitmapSsp": "01ffffff"} },
-		    { "psid": 139,  "ssp": { "bitmapSsp": "01684000fff8"} },            
-		    { "psid": 141 }
+        "region": {
+            "identifiedRegion ": [ { "countryOnly": 620 } ]
+        },
+        "appPermissions": [
+            { "psid": 36,  "ssp": { "bitmapSsp": "01809c"} },
+            { "psid": 37,  "ssp": { "bitmapSsp": "01ffffff"} },
+            { "psid": 139,  "ssp": { "bitmapSsp": "01684000fff8"} },            
+            { "psid": 141 }
         ]
     }
 }
