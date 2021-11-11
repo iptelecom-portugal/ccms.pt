@@ -62,8 +62,8 @@ The ETSI repository at https://forge.etsi.org/gitlab/ITS/ITS_ASN1 houses related
 
 The available APIs specifications are accessible and browsable from the root of each service instance:
 
-* RCA/DC:  https://0.ea.pilot.croads.ccms.pt/
-* EA:  https://0.aa.pilot.croads.ccms.pt/
+* RCA/DC:  https://0.dc.pilot.croads.ccms.pt/
+* EA:  https://0.ea.pilot.croads.ccms.pt/
 * AA:  https://0.aa.pilot.croads.ccms.pt/
 
 
