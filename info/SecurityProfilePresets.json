@@ -1,0 +1,142 @@
+{
+  "central": {
+    "region": {
+      "identifiedRegion": [
+        {
+          "countryOnly": 620
+        }
+      ]
+    },
+    "appPermissions": [
+      {
+        "psid": 36,
+        "ssp": {
+          "sspBitmap": "01ff9c"
+        }
+      },
+      {
+        "psid": 37,
+        "ssp": {
+          "sspBitmap": "01ffffff"
+        }
+      },
+      {
+        "psid": 139,
+        "ssp": {
+          "sspBitmap": "01684000fff8"
+        }
+      },
+      {
+        "psid": 141
+      }
+    ]
+  },
+  "passengerCar": {
+    "appPermissions": [
+      {
+        "psid": 36,
+        "ssp": {
+          "sspBitmap": "010000"
+        }
+      },
+      {
+        "psid": 37,
+        "ssp": {
+          "sspBitmap": "019fbfed"
+        }
+      },
+      {
+        "psid": 141
+      }
+    ]
+  },
+  "bus": {
+    "appPermissions": [
+      {
+        "psid": 36,
+        "ssp": {
+          "sspBitmap": "014000"
+        }
+      },
+      {
+        "psid": 37,
+        "ssp": {
+          "sspBitmap": "019fbfed"
+        }
+      },
+      {
+        "psid": 141
+      }
+    ]
+  },
+  "tram": {
+    "appPermissions": [
+      {
+        "psid": 36,
+        "ssp": {
+          "sspBitmap": "014000"
+        }
+      },
+      {
+        "psid": 37,
+        "ssp": {
+          "sspBitmap": "019fbfed"
+        }
+      },
+      {
+        "psid": 141
+      }
+    ]
+  },
+  "specialVehicle": {
+    "appPermissions": [
+      {
+        "psid": 36,
+        "ssp": {
+          "sspBitmap": "010260"
+        }
+      },
+      {
+        "psid": 37,
+        "ssp": {
+          "sspBitmap": "019ffffd"
+        }
+      },
+      {
+        "psid": 141
+      }
+    ]
+  },
+  "roadSideUnit": {
+    "region": {
+      "identifiedRegion": [
+        {
+          "countryOnly": 620
+        }
+      ]
+    },
+    "appPermissions": [
+      {
+        "psid": 36,
+        "ssp": {
+          "sspBitmap": "01809c"
+        }
+      },
+      {
+        "psid": 37,
+        "ssp": {
+          "sspBitmap": "01ffffff"
+        }
+      },
+      {
+        "psid": 139,
+        "ssp": {
+          "sspBitmap": "01684000fff8"
+        }
+      },
+      {
+        "psid": 141
+      }
+    ]
+  }
+}
