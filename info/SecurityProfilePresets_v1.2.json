@@ -17,14 +17,7 @@
       { "psid": 141 }
     ]
   },
-  "bus": {
-    "appPermissions": [
-      { "psid": 36, "ssp": { "sspBitmap": "014000" } },
-      { "psid": 37, "ssp": { "sspBitmap": "019fbfed" } },
-      { "psid": 141 }
-    ]
-  },
-  "tram": {
+  "busOrTram": {
     "appPermissions": [
       { "psid": 36, "ssp": { "sspBitmap": "014000" } },
       { "psid": 37, "ssp": { "sspBitmap": "019fbfed" } },
