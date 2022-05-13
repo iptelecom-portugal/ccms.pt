@@ -138,10 +138,9 @@ The "public_key" is a ASN.1 COER _PublicVerificationKey_ in hexdecimal encoding.
 
 The "profile" field indicates one of the preset default station profiles as defined by C-ROADS Portugal, and are loosely related to station types. Accepted values are:
 
-* central
+* centralStation
 * passengerCar
-* bus
-* tram
+* busOrTram
 * specialVehicle
 * roadSideUnit
 
