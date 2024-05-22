@@ -175,8 +175,8 @@ Alternativelly you can emails us the information to *pki-croads@iptelecom.pt* in
 
 Some tested hardware systems and software versions are:
 
-* COHDA MK5 release 17.0 (any moment now...)
-* <TBD> ( A-To-B, CTag, Siemens - comming soon...)
+* COHDA MK5 release 17.0
+* <TBD> ( A-To-B, CTag - comming soon)
 
 
 ### Vendor Specific Instructions
@@ -186,6 +186,5 @@ You can find here the specific procedures and tools to help in  provisioning the
 * COHDA MK5 release 17.0 (any moment now...)
 * A-To-Be (comming soon)
 * CTag (comming soon)
-* Siemens (comming soon)
 
 
