@@ -179,12 +179,3 @@ Some tested hardware systems and software versions are:
 * <TBD> ( A-To-B, CTag - comming soon)
 
 
-### Vendor Specific Instructions
-
-You can find here the specific procedures and tools to help in  provisioning these C-ITS Station hardware models so that they may use our PKI system as the security certificate provider for your equipment:
-
-* COHDA MK5 release 17.0 (any moment now...)
-* A-To-Be (comming soon)
-* CTag (comming soon)
-
-
